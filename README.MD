@@ -42,6 +42,8 @@ docker exec -it docker_helihop_local_php_1 composer install
 docker exec -it docker_helihop_local_php_1 php artisan migrate
 ```
 
+* В качестве админки используется решение https://github.com/jeroennoten/Laravel-AdminLTE/
+
 ###Остановка Docker окружения
 Если с проектом закончена работа, необходимо остановить Docker окружения, чтобы компьютер не использовал лишние ресурсы и не тормозил во время других необходимых операциях.  
 Необходимо выполнить команду.
