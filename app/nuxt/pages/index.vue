@@ -1,65 +1,135 @@
 <template>
-  <section class="container">
     <div>
-      <app-logo/>
-      <h1 class="title">
-        helihop
-      </h1>
-      <h2 class="subtitle">
-        HeliHop
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+        <div class="wrapper">
+            <Tabs/>
+            <FilterSeats/>
+            <AirportTransfer/>
+            <BookNow/>
+            <BusinessTrips/>
+            <Experiencies/>
+            <Getaways/>
+        </div>
+        <Helicopters/>
+        <OurPartners/>
+        <Footer/>
     </div>
-  </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import vSelect from 'vue-select'
+import Tabs from "../components/Tabs"
+import FilterSeats from "../components/filter-seats"
+import AirportTransfer from "../components/Airport-Transfer"
+import BookNow from "../components/BookNow"
+import BusinessTrips from "../components/BusinessTrips"
+import Experiencies from "../components/Experiencies"
+import Getaways from "../components/Getaways"
+import Helicopters from "../components/Helicopters"
+import OurPartners from "../components/OurPartners"
+import Footer from "../components/Footer"
 
 export default {
-  components: {
-    AppLogo
-  }
+    name: "index",
+
+    components: {
+        Tabs,
+        vSelect,
+        FilterSeats,
+        AirportTransfer,
+        BookNow,
+        BusinessTrips,
+        Experiencies,
+        Getaways,
+        Helicopters,
+        OurPartners,
+        Footer
+    },
+
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss">
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+    input {
+        border-radius: 2px;
+    }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+    .select__block {
+        img {
+            position: absolute;
+            top: calc(50% - 12px);
+            left: 20px;
+        }
+    }
 
-.links {
-  padding-top: 15px;
-}
+    .select {
+        width: 30%;
+        display: inline-block;
+        position: relative;
+        margin-right: 2px;
+
+        &:nth-child(3),
+        &:nth-child(4) {
+            width: 15%;
+        }
+        &:nth-child(5) {
+            width: 7%;
+        }
+        &:nth-child(6) {
+            width: 5%;
+            background-color: #4FABDC;
+            height: 100%;
+            border-radius: 2px;
+
+            img {
+                top: calc(50% - 10px);
+                left: calc(50% - 10px);
+            }
+        }
+    }
+
+    .select2 {
+        position: absolute;
+        background-color: #4FABDC;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        top: calc(50% - 15px);
+        left: -18px;
+        z-index: 1;
+
+        .select2__img {
+            top: calc(50% - 9px);
+            left: calc(50% - 10.5px);
+        }
+    }
+
+    .select .vs__dropdown-toggle {
+        height: 60px;
+        border-radius: 2px;
+        border-color: rgba(79, 171, 220, 0.25);
+        padding-left: 50px;
+    }
+
+    .vs__search {
+        padding-left: 0 !important;
+    }
+
+    .select .vs__selected {
+        height: 50px;
+    }
+
+    .select .vs__search::placeholder {
+        display: flex;
+        align-items: center;
+    }
+
+    .select .vs__actions {
+        display: none;
+    }
+
+    .select .vs__search {
+    }
+
 </style>
 

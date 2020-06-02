@@ -20,6 +20,15 @@ module.exports = {
   /*
   ** Build configuration
   */
+  css: [
+      'node_modules/bootstrap/dist/css/bootstrap.css',
+      'assets/css/layout.scss',
+      'assets/fonts/stylesheet.css',
+],
+  plugins: [
+      { src: '~/plugins/vue-select.js', ssr: false },
+      { src: '~/plugins/vue-awesome-swiper.js', ssr: false },
+  ],
   build: {
     /*
     ** Run ESLint on save
