@@ -21,7 +21,6 @@
     .our-partners {
         display: flex;
         justify-content: center;
-        color: #333;
         text-align: center;
         padding: 50px 0;
 

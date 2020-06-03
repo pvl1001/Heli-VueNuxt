@@ -19,6 +19,7 @@
     "portal-vue": "^2.1.7",
     "scss": "^0.2.4",
     "swiper": "^5.4.1",
+    "v-calendar": "^1.0.0-beta.23",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
     "vue-select": "^3.10.3",

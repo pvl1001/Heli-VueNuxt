@@ -56,7 +56,7 @@
 <style lang="scss" scoped>
 
     .footer {
-        background-color: #4FABDC;
+        background-color: var(--colorBg);
         color: #fff;
         padding: 33px 0;
 

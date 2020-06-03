@@ -3,16 +3,25 @@
         <b-row class="my-1">
             <b-col cols="12" class="d-flex select__block">
                 <div class="select">
-                    <img src="../static/icon/Union.png" height="24"/>
+                    <img class="select__logo" src="../static/icon/Union.png" height="24"/>
                     <v-select :options="['Canada', 'United States']"></v-select>
                 </div>
                 <div class="select">
-                    <div class="select2"><img class="select2__img" src="../static/icon/Arrow.png" height="16"/></div>
+                    <div class="select2"><img class="select2__img" src="../static/svg/arrow.svg" height="18"/></div>
                     <v-select :options="['Canada', 'United States']"></v-select>
                 </div>
-                <div class="select">
-                    <div ></div>
-                    <v-select :options="['Canada', 'United States']"></v-select>
+
+
+                <div class="select calendar">
+                    <v-date-picker
+                        v-model="date"
+                        :popover="{ placement: 'bottom', visibility: 'click' }"
+                        :input-props='{
+                           placeholder: "MM/DD/YYYY",
+                           readonly: true,
+                           }'
+                    />
+                    <img src="../static/icon/calendar.png" height="20"/>
                 </div>
                 <div class="select">
                     <div ></div>
@@ -22,9 +31,9 @@
                     <div ></div>
                     <v-select :options="['1', '2']"></v-select>
                 </div>
-                <div class="select">
+                <b-link href="#" class="select">
                     <img src="../static/icon/search.png" height="20"/>
-                </div>
+                </b-link>
             </b-col>
         </b-row>
 
@@ -46,7 +55,7 @@
 
         data() {
             return {
-
+                date: '',
             }
         },
         methods: {
@@ -73,7 +82,7 @@
     .select__block {
         padding-bottom: 23px;
 
-        img {
+        .select__logo {
             position: absolute;
             top: calc(50% - 12px);
             left: 20px;
@@ -95,9 +104,20 @@
         }
         &:nth-child(6) {
             width: 5%;
-            background-color: #4FABDC;
+            background-color: var(--colorBg);
             height: 100%;
             border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                transition: .3s;
+            }
+
+            &:hover img {
+                transform: scale(1.2);
+            }
 
             img {
                 top: calc(50% - 10px);
@@ -108,18 +128,22 @@
 
     .select2 {
         position: absolute;
-        background-color: #4FABDC;
+        background-color: var(--colorBg);
         border-radius: 50%;
         height: 30px;
         width: 30px;
         top: calc(50% - 15px);
         left: -16px;
         z-index: 1;
+        transition: .3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        .select2__img {
-            top: calc(50% - 9px);
-            left: calc(50% - 10.5px);
+        &:hover {
+            transform: rotate(-180deg);
         }
+
     }
 
     .select .vs__dropdown-toggle {
@@ -190,6 +214,20 @@
     }
     .card__body:hover span:last-child {
         display: block;
+    }
+
+    .calendar {
+        position: relative;
+
+        .vc-w-full {
+            height: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: calc(50% - 10px);
+            right: 20px;
+        }
     }
 
 </style>

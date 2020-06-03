@@ -5,7 +5,7 @@
               <b-col cols="12" class="header-image">
                   <div class="wrapper">
                       <div class="d-flex justify-content-between align-items-center">
-                          <img src="../static/icon/logo.png" width="177" height="51" alt="image">
+                          <img src="../static/icon/logo.png" width="177" height="51">
                           <b-nav class="nav">
                               <b-nav-item>FLIGHTS</b-nav-item>
                               <b-nav-item>ABOUT</b-nav-item>
@@ -51,6 +51,8 @@
             font-size: 14px;
             letter-spacing: 0.5em;
             padding-right: 76px;
+            transition: .2s;
+            color: var(--colorText);
         }
         ul li:last-child a {
             padding-right: 0;
@@ -62,6 +64,9 @@
             bottom: 0;
             padding-bottom: 5px;
             font-weight: bold;
+        }
+        .nav .nav-link:hover {
+            color: var(--colorBg);
         }
     }
 </style>

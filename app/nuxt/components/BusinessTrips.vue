@@ -58,7 +58,7 @@
         padding-bottom: 23px;
 
         h1 {
-            color: #333333;
+            color: var(--colorText);
         }
 
     }

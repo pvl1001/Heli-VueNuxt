@@ -3,16 +3,8 @@ body * {
 }
 
 body {
-    color: var(--color-default-text);
+    color: var(--colorText);
     font-family: 'roboto', sans-serif;
-}
-
-h1, h2, h3, h4, h5 {
-    //font-family: 'Avenir Next Cyr Demi';
-}
-
-h2 b {
-    //color: var(--color-selected);
 }
 
 h1 {
@@ -20,13 +12,9 @@ h1 {
     font-weight: bold;
 }
 
-h3 {
-    //font-size: 24px;
-}
-
 a {
     text-decoration: none;
-    color: #000;
+    color: var(--colorText);
 }
 
 a:hover {
@@ -45,7 +33,7 @@ a:hover {
     justify-content: center;
     width: 150px;
     height: 40px;
-    background-color: #4FABDC;
+    background-color: var(--colorBg);
     color: #fff;
     font-size: 14px;
     line-height: 16px;
@@ -56,13 +44,13 @@ a:hover {
 
     &:hover {
         background-color: #fff;
-        color: #4FABDC;
-        border: 1px solid #4FABDC;
+        color: var(--colorBg);
+        border: 1px solid var(--colorBg);
     }
 }
 
 .card__img {
-    height: 190px;
+    max-height: 190px;
     overflow: hidden;
 
     img {
@@ -95,12 +83,12 @@ a:hover {
         line-height: 16px;
         letter-spacing: 0.5em;
         padding-bottom: 8px;
-        color: #333333;
+        color: var(--colorText);
     }
     .card__airplane {
         font-size: 14px;
         line-height: 16px;
-        color: #4FABDC;
+        color: var(--colorBg);
     }
 
 }
@@ -125,7 +113,7 @@ a:hover {
     .card__city-dot {
         width: 10px;
         height: 10px;
-        background-color: #4FABDC;
+        background-color: var(--colorBg);
         border-radius: 50%;
         position: absolute;
         left: -5px;
@@ -133,7 +121,7 @@ a:hover {
     }
     .card__city-line {
         position: absolute;
-        border-left: 1px solid #4FABDC;
+        border-left: 1px solid var(--colorBg);
         height: calc(300% - 10px);
         left: -0.5px;
         top: 10px;

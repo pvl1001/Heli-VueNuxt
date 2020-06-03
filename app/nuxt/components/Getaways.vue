@@ -59,7 +59,7 @@
         padding-bottom: 23px;
 
         h1 {
-            color: #333333;
+            color: var(--colorText);
         }
         .card-transfer__img {
             height: 190px;
@@ -82,12 +82,12 @@
                 line-height: 16px;
                 letter-spacing: 0.5em;
                 padding-bottom: 8px;
-                color: #333333;
+                color: var(--colorText);
             }
             .card-transfer__airplane {
                 font-size: 14px;
                 line-height: 16px;
-                color: #4FABDC;
+                color: var(--colorBg);
             }
 
         }
@@ -114,7 +114,7 @@
             .card-transfer__city-dot {
                 width: 10px;
                 height: 10px;
-                background-color: #4FABDC;
+                background-color: var(--colorBg);
                 border-radius: 50%;
                 position: absolute;
                 left: -5px;
@@ -122,7 +122,7 @@
             }
             .card-transfer__city-line {
                 position: absolute;
-                border-left: 1px solid #4FABDC;
+                border-left: 1px solid var(--colorBg);
                 height: calc(300% - 10px);
                 left: -0.5px;
                 top: 10px;

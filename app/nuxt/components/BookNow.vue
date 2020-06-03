@@ -27,7 +27,7 @@
         .book-now__text {
             font-size: 24px;
             font-weight: 300;
-            color: #333333;
+            color: var(--colorText);
             margin-right: 140px;
         }
 

@@ -21,10 +21,17 @@
         margin: 27px 44px 20px 0;
         font-weight: 300;
         font-size: 18px;
+        transition: .2s;
+        border-bottom: 3px solid transparent;
+
+
+        &:hover {
+            color: var(--colorBg)
+        }
     }
 
     .active-nav-item {
-        border-bottom: 3px solid #4FABDC;
-        font-weight: bold;
+        border-bottom: 3px solid var(--colorBg);
+        -webkit-text-stroke: 1px var(--colorText);
     }
 </style>

@@ -105,11 +105,21 @@
                 left: -70px;
                 color: #fff;
                 zoom: 50%;
+                transition: .3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
             .swiper-button-next {
                 right: -70px;
                 color: #fff;
                 zoom: 50%;
+                transition: .3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
             }
         }
         .swiper-slide {
@@ -151,7 +161,7 @@
                 padding: 25px 20px;
                 font-size: 12px;
                 line-height: 24px;
-                color: #333333;
+                color: var(--colorText);
 
                 .swiper__text-info {
                     padding-bottom: 8px;
