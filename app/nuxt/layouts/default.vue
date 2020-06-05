@@ -1,53 +1,73 @@
 <template>
   <div>
-    <nuxt/>
+      <b-container fluid>
+          <b-row>
+              <b-col cols="12" class="header-image">
+                  <div class="wrapper">
+                      <div class="d-flex justify-content-between align-items-center">
+                          <img src="../static/icon/logo.png" width="177" height="51">
+                          <b-nav class="nav">
+                              <b-nav-item>FLIGHTS</b-nav-item>
+                              <b-nav-item>ABOUT</b-nav-item>
+                              <b-nav-item>LOGIN</b-nav-item>
+                          </b-nav>
+                      </div>
+                      <div class="choose">Choose your way.</div>
+                  </div>
+              </b-col>
+          </b-row>
+      </b-container>
+      <nuxt/>
+
   </div>
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+ <script>
+     import Vue from 'vue';
+     import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-}
+     Vue.use(BootstrapVue)
+     Vue.use(IconsPlugin)
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
+     export default {
+         components: {
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
+         }
+     }
+ </script>
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
+<style lang="scss">
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+    .header-image {
+        min-width: 100%;
+        height: 410px;
+        background: url('../static/img/Rectangle 1.jpg') center no-repeat;
+        background-size: cover;
+        padding-top: 31px;
+
+        ul > li > a {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 14px;
+            letter-spacing: 0.5em;
+            padding-right: 76px;
+            transition: .2s;
+            color: var(--colorText);
+        }
+        ul li:last-child a {
+            padding-right: 0;
+        }
+        .choose {
+            color: #fff;
+            font-size: 36px;
+            position: absolute;
+            bottom: 0;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+        .nav .nav-link:hover {
+            color: var(--colorBg);
+        }
+    }
 </style>
 

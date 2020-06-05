@@ -1,0 +1,130 @@
+body * {
+    outline: none !important;
+}
+
+body {
+    color: var(--colorText);
+    font-family: 'roboto', sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: var(--colorText);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 1440px;
+    padding: 0 130px;
+    margin: 0 auto;
+}
+
+.heli-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    background-color: var(--colorBg);
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.5em;
+    border: 1px solid transparent;
+    transition: .5s;
+
+    &:hover {
+        background-color: #fff;
+        color: var(--colorBg);
+        border: 1px solid var(--colorBg);
+    }
+}
+
+.card__img {
+    max-height: 190px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        transition: .3s;
+    }
+}
+.card__text {
+    display: flex;
+    padding: 16px 45px;
+}
+.card__content {
+    transition: .3s;
+    overflow: hidden;
+}
+.card__content:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.card__content:hover .card__img img {
+    transform: scale(1.1);
+}
+.card__text-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+
+    .card__time {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.5em;
+        padding-bottom: 8px;
+        color: var(--colorText);
+    }
+    .card__airplane {
+        font-size: 14px;
+        line-height: 16px;
+        color: var(--colorBg);
+    }
+
+}
+.card__city {
+
+    font-size: 14px;
+    position: relative;
+
+    .card__city-from {
+        padding-bottom: 15px;
+    }
+    .card__city-from > div:first-child,
+    .card__city-to > div:first-child {
+        position: relative;
+        padding-left: 20px;
+    }
+    .card__city-from > div:last-child,
+    .card__city-to > div:last-child {
+        font-size: 12px;
+        padding-left: 20px;
+    }
+    .card__city-dot {
+        width: 10px;
+        height: 10px;
+        background-color: var(--colorBg);
+        border-radius: 50%;
+        position: absolute;
+        left: -5px;
+        top: 7px;
+    }
+    .card__city-line {
+        position: absolute;
+        border-left: 1px solid var(--colorBg);
+        height: calc(300% - 10px);
+        left: -0.5px;
+        top: 10px;
+    }
+
+}
