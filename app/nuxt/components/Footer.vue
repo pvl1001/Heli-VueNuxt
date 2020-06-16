@@ -147,6 +147,7 @@
             .info {
                 flex-direction: column;
                 align-items: center;
+                padding-bottom: 0;
 
                 > div {
                     padding: 20px 0;

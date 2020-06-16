@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="select">
-                    <div class="select2"><img class="select2__img" src="../static/svg/arrow.svg" height="18"/></div>
+                    <div class="select-reverse"><img class="select-reverse__img" src="../static/svg/arrow.svg" height="18"/></div>
                     <v-select :options="['Canada', 'United States']"></v-select>
                 </div>
 
@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="select">
-                    <div ></div>
-                    <v-select :options="['Canada', 'United States']"></v-select>
+                    <div></div>
+                    <v-select :options="['10:00', '11:00']"></v-select>
                 </div>
 
                 <div class="select">
@@ -44,6 +44,8 @@
         <div class="d-md-flex d-block cards">
             <b-col cols="12" md="" class="cards-padding" v-for="index in 4" :key="index">
                 <div class="card__body">
+                    <b-link href="#" />
+
                     <div class="bg-hover"></div>
                     <span>Airport transfers</span>
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, voluptates..</span>
@@ -135,7 +137,7 @@
         }
     }
 
-    .select2 {
+    .select-reverse {
         position: absolute;
         background-color: var(--colorBg);
         border-radius: 50%;
@@ -148,6 +150,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         &:hover {
             transform: rotate(-180deg);
@@ -205,16 +208,26 @@
         font-weight: bold;
         font-size: 18px;
         transition: .5s;
+        position: relative;
 
         &:before {
             content: '';
             position: absolute;
-            top: 10px;
-            right: 10px;
-            bottom: 10px;
-            left: 10px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 73.96%, #000000 100%);
             transition: .5s;
+        }
+
+        > a {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
         }
 
         span {
@@ -227,10 +240,10 @@
     .bg-hover {
         background: linear-gradient(0deg, rgba(51, 51, 51, 0.8), rgba(51, 51, 51, 0.8));
         position: absolute;
-        top: 10px;
-        right: 10px;
-        bottom: 10px;
-        left: 10px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         transition: .3s;
         opacity: 0;
     }

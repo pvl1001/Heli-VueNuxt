@@ -7,6 +7,8 @@
                 <b-row class="cards">
                     <b-col cols="12" md="" class="cards-padding" v-for="index in 3" :key="index">
                         <div class="card__content">
+                            <b-link href="#" />
+
                             <div class="card__img">
                                 <img src="../static/img/image 28.jpg" alt="">
                             </div>
@@ -18,9 +20,9 @@
 
                                 <div class="card__city">
                                     <div class="card__city-from">
+                                        <div class="card__city-line"></div>
                                         <div>
                                             <div class="card__city-dot"></div>
-                                            <div class="card__city-line"></div>
                                             Helipad 1
                                         </div>
                                         <div>London</div>

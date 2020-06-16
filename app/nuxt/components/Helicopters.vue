@@ -8,6 +8,7 @@
                     <swiper :options="swiperOption" ref="mySwiper">
                         <!-- slides -->
                         <swiper-slide v-for="index in 10" :key="index">
+                            <b-link href="#" />
 
                             <div class="swiper__img">
                                 <img src="../static/img/image 29.jpg" width="100%" alt="">
@@ -59,7 +60,7 @@
                     slidesPerView: 1,
                     spaceBetween: 20,
                     autoplay: {
-                        delay: 99999,
+                        delay: 5000,
                         disableOnInteraction: false,
                     },
                     navigation: {
@@ -133,8 +134,15 @@
             }
         }
         .swiper-slide {
-            /*min-height: 350px;*/
             background-color: #fff;
+            cursor: pointer;
+
+            > a {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: block;
+            }
 
             .swiper__img img {
                 transition: .3s;
