@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <b-col>
         <b-tabs active-nav-item-class="active-nav-item" no-nav-style no-body>
             <b-tab title-link-class="title-link" title="Seats" active></b-tab>
             <b-tab title-link-class="title-link" title="Charter"></b-tab>
             <b-tab title-link-class="title-link" title="Excursions"></b-tab>
         </b-tabs>
-    </div>
+    </b-col>
 </template>
 
 <script>
@@ -28,6 +28,10 @@
         &:hover {
             color: var(--colorBg)
         }
+    }
+
+    .nav li:last-child .title-link {
+        margin-right: 0;
     }
 
     .active-nav-item {

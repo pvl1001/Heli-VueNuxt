@@ -23,7 +23,7 @@ a:hover {
 
 .wrapper {
     max-width: 1440px;
-    padding: 0 130px;
+    //padding: 0 130px;
     margin: 0 auto;
 }
 
@@ -60,7 +60,8 @@ a:hover {
 }
 .card__text {
     display: flex;
-    padding: 16px 45px;
+    padding: 16px 0;
+    justify-content: center;
 }
 .card__content {
     transition: .3s;
@@ -127,4 +128,10 @@ a:hover {
         top: 10px;
     }
 
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        padding: 0;
+    }
 }

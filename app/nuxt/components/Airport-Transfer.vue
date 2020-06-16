@@ -1,11 +1,11 @@
 <template>
     <div>
-        <b-row class="airport-transfer">
+        <div class="airport-transfer">
             <b-col cols="12">
                 <h1>Airport transfers</h1>
 
                 <b-row class="cards">
-                    <b-col class="cards-padding" v-for="index in 3" :key="index">
+                    <b-col cols="12" md="" class="cards-padding" v-for="index in 3" :key="index">
                         <div class="card__content">
                             <div class="card__img">
                                 <img src="../static/img/image 28.jpg" alt="">
@@ -40,7 +40,7 @@
                 </b-row>
 
             </b-col>
-        </b-row>
+        </div>
     </div>
 </template>
 

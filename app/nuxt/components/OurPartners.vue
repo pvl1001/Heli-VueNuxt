@@ -1,12 +1,8 @@
 <template>
     <div class="our-partners">
-        <b-row>
-            <b-col>
-                <h1>Our partners</h1>
-                <span>This could be your advertising.</span>
-                <b-link href="#" class="heli-btn">JOIN US</b-link>
-            </b-col>
-        </b-row>
+        <h1>Our partners</h1>
+        <span>This could be your advertising.</span>
+        <b-link href="#" class="heli-btn">JOIN US</b-link>
     </div>
 </template>
 
@@ -19,10 +15,8 @@
 <style lang="scss" scoped>
 
     .our-partners {
-        display: flex;
-        justify-content: center;
         text-align: center;
-        padding: 50px 0;
+        padding: 50px 15px;
 
         span {
             font-weight: 300;
@@ -35,6 +29,10 @@
         .heli-btn {
             margin: 0 auto;
         }
+
+    }
+
+    @media (max-width: 767px) {
 
     }
 

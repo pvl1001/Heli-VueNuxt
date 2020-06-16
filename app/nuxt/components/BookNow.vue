@@ -33,4 +33,31 @@
 
     }
 
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .book-now {
+            padding: 0 60px;
+
+            .book-now__text {
+                margin-right: 30px;
+            }
+        }
+
+    }
+
+    @media (max-width: 767px) {
+        .book-now {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: auto;
+            padding: 20px;
+
+            .book-now__text {
+                margin-right: 0;
+                padding-bottom: 20px;
+            }
+
+        }
+    }
+
 </style>
