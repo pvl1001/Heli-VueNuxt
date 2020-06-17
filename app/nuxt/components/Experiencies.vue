@@ -1,12 +1,14 @@
 <template>
     <div>
-        <b-row class="experiencies">
+        <div class="experiencies">
             <b-col cols="12">
                 <h1>Experiencies</h1>
 
                 <b-row class="cards">
-                    <b-col class="cards-padding" v-for="index in 4" :key="index">
+                    <b-col cols="12" md="" class="cards-padding" v-for="index in 4" :key="index">
                         <div class="card__content">
+                            <b-link href="#" />
+
                             <div class="card__img">
                                 <img src="../static/img/image 40.jpg" alt="">
                             </div>
@@ -18,9 +20,9 @@
 
                                 <div class="card__city">
                                     <div class="card__city-from">
+                                        <div class="card__city-line"></div>
                                         <div>
                                             <div class="card__city-dot"></div>
-                                            <div class="card__city-line"></div>
                                             Helipad 1
                                         </div>
                                         <div>London</div>
@@ -40,7 +42,7 @@
                 </b-row>
 
             </b-col>
-        </b-row>
+        </div>
     </div>
 
 </template>

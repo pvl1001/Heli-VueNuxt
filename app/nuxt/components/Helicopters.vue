@@ -8,9 +8,10 @@
                     <swiper :options="swiperOption" ref="mySwiper">
                         <!-- slides -->
                         <swiper-slide v-for="index in 10" :key="index">
+                            <b-link href="#" />
 
                             <div class="swiper__img">
-                                <img src="../static/img/image 29.jpg" alt="">
+                                <img src="../static/img/image 29.jpg" width="100%" alt="">
                                 <span class="swiper__img-name">Airbus H125</span>
                                 <span class="swiper__img-price">$2,700</span>
                             </div>
@@ -56,17 +57,26 @@
             return {
                 swiperOption: {
                     loop: true,
-                    slidesPerView: 4,
+                    slidesPerView: 1,
                     spaceBetween: 20,
                     autoplay: {
-                        delay: 99999,
+                        delay: 5000,
                         disableOnInteraction: false,
                     },
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     },
-
+                    breakpoints: {
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    }
                 },
             }
         },
@@ -78,9 +88,10 @@
 <style lang="scss">
 
     .helicopters {
-        min-height: 540px;
+        /*min-height: 540px;*/
+        overflow: hidden;
         min-width: 100%;
-        padding-top: 30px;
+        padding: 30px 0 60px 0;
         background: linear-gradient(0deg, rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0.5)),
         url("../static/img/Rectangle 50.jpg") no-repeat center / cover;
 
@@ -123,8 +134,15 @@
             }
         }
         .swiper-slide {
-            min-height: 350px;
             background-color: #fff;
+            cursor: pointer;
+
+            > a {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: block;
+            }
 
             .swiper__img img {
                 transition: .3s;
@@ -133,7 +151,7 @@
                 transform: scale(1.1);
             }
             .swiper__img {
-                height: 200px;
+                /*height: 200px;*/
                 display: flex;
                 align-items: flex-end;
                 justify-content: space-between;
@@ -177,5 +195,35 @@
         }
 
     }
+
+    @media (max-width: 1024px) {
+        .helicopters .swiper {
+            width: 90%;
+            margin: 23px auto 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+        .helicopters {
+            padding: 30px 15px;
+        }
+
+            .cards-padding {
+                padding: 10px 0;
+            }
+
+            .helicopters .swiper {
+                width: 80%;
+                margin: 23px auto 0;
+                position: relative;
+            }
+
+            .swiper__img img {
+                width: 100%;
+                /*min-height: 100%;*/
+            }
+
+        }
 
 </style>

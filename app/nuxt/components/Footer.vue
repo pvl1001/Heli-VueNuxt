@@ -1,14 +1,16 @@
 <template>
-    <div class="footer">
-        <b-col class="wrapper d-flex">
-            <b-col cols="3" class="contacts">
+    <b-col class="footer">
+        <b-row class="wrapper">
+
+            <b-col cols="12" md="3" class="contacts">
                 <img src="../static/icon/LogoFFF.png" height="51"/>
                 <div class="contacts__contacts">CONTACTS</div>
                 <div class="contacts__phone">+7 999 XXX XX XX</div>
                 <div class="contacts__email">EXAMPLE@HELIHOP.COM</div>
                 <div class="contacts__address">Address</div>
             </b-col>
-            <b-col class="d-flex info">
+
+            <b-col cols="12" md="" class="d-flex info">
                 <div class="info__about">
                     <b-link href="#">about</b-link>
                     <b-link href="#">Safety & Security</b-link>
@@ -43,8 +45,8 @@
                     <b-link>Login</b-link>
                 </div>
             </b-col>
-        </b-col>
-    </div>
+        </b-row>
+    </b-col>
 </template>
 
 <script>
@@ -96,6 +98,10 @@
                 display: flex;
                 flex-direction: column;
 
+                &:last-child {
+                    padding-right: 0;
+                }
+
                 a {
                     color: #fff;
                     width: fit-content;
@@ -106,6 +112,7 @@
                     line-height: 32px;
                     border-bottom: 1px solid transparent;
                     transition: .3s;
+                    white-space: nowrap;
 
                     &:hover {
                         border-color: #fff;
@@ -123,6 +130,33 @@
                 }
             }
         }
+    }
+
+    @media (max-width: 1023px) {
+
+        .footer {
+
+            .contacts {
+                border: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 50px;
+                min-width: 100%;
+            }
+            .info {
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 0;
+
+                > div {
+                    padding: 20px 0;
+                    align-items: center;
+                }
+            }
+
+        }
+
     }
 
 </style>

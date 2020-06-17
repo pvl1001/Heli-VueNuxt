@@ -1,12 +1,14 @@
 <template>
     <div>
-        <b-row class="business-trips">
+        <div class="business-trips">
             <b-col cols="12">
                 <h1>Business Trips</h1>
 
                 <b-row class="cards">
-                    <b-col class="cards-padding" v-for="index in 4" :key="index">
+                    <b-col cols="12" md="" class="cards-padding" v-for="index in 4" :key="index">
                         <div class="card__content">
+                            <b-link href="#" />
+
                             <div class="card__img">
                                 <img src="../static/img/image 36.jpg" alt="">
                             </div>
@@ -18,9 +20,9 @@
 
                                 <div class="card__city">
                                     <div class="card__city-from">
+                                        <div class="card__city-line"></div>
                                         <div>
                                             <div class="card__city-dot"></div>
-                                            <div class="card__city-line"></div>
                                             Helipad 1
                                         </div>
                                         <div>London</div>
@@ -40,7 +42,7 @@
                 </b-row>
 
             </b-col>
-        </b-row>
+        </div>
     </div>
 </template>
 
@@ -59,6 +61,21 @@
 
         h1 {
             color: var(--colorText);
+        }
+
+    }
+
+    @media (max-width: 767px) {
+
+        .business-trips {
+
+            padding-top: 200px;
+
+
+            h1 {
+                color: var(--colorText);
+            }
+
         }
 
     }
