@@ -1,10 +1,12 @@
 <template>
   <div>
-      <div class="burger-menu" :class="{ 'show-burger': showBurger }">
+      <div class="burger-menu"
+           :class="{ 'show-burger': showBurger }"
+           @click="showBurger = !showBurger">
           <b-nav class="nav">
               <b-nav-item>FLIGHTS</b-nav-item>
               <b-nav-item>ABOUT</b-nav-item>
-              <b-nav-item>LOGIN</b-nav-item>
+              <b-nav-item to="/login">LOGIN</b-nav-item>
           </b-nav>
       </div>
       <b-container fluid>
@@ -16,7 +18,7 @@
                           <a href="/">
                               <img src="../static/icon/logo.png" width="177" height="51"></a>
 
-                          <div class="burger">
+                          <div class="burger">{{ menu }}
                               <input type="checkbox" id="menu" @click="showBurger = !showBurger" />
                               <label for="menu"><div/><div/><div/></label>
                           </div>
@@ -24,7 +26,7 @@
                           <b-nav class="header-image__nav" :class="{ 'd-flex': this.$route.path === '/' }">
                               <b-nav-item>FLIGHTS</b-nav-item>
                               <b-nav-item>ABOUT</b-nav-item>
-                              <b-nav-item>LOGIN</b-nav-item>
+                              <b-nav-item to="/login">LOGIN</b-nav-item>
                           </b-nav>
                       </div>
 
@@ -55,22 +57,25 @@
              Tabs,
              FilterSeats,
          },
-
          data() {
              return {
                  showBurger: false,
+                 menu: '',
              }
          },
 
+         methods: {},
+
          computed: {
              headerImageHeight() {
-                 return this.$route.path === '/charter' ? '294px' : ''
+                 return this.$route.path !== '/' ? '294px' : ''
              },
              headerImageMarginBottom () {
                  return this.$route.path !== '/' ? '-194px' : ''
                      // screen.width <= 767 ? 'auto' : ''
              }
-         }
+         },
+
      }
  </script>
 
@@ -229,7 +234,7 @@
             width: 100%;
             height: 100%;
             background-color: var(--colorBg);
-            z-index: 999;
+            z-index: 10;
             left: -100%;
             transition: .3s ease;
             transition-delay: .1s;
