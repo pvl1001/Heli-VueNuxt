@@ -1,17 +1,15 @@
 <template>
-    <div class="filter-seats">
+    <div class="filter-seats mobile">
+        <div class="my-1 w-100">
+            <b-col cols="12" class="d-flex select__block">
 
-        <div class="my-1">
-            <b-col cols="12" class="d-flex select__block" :class="{ 'pb-0': this.$route.path === '/' }">
-
-                <div class="select" v-b-modal.selectCity>
+                <div class="select" v-b-modal.selectCityMobile>
                     <img class="select__logo" src="../static/icon/Union.png" height="24"/>
                     <v-select :options="['Canada', 'United States']"></v-select>
                 </div>
 
-                <div class="select" v-b-modal.selectCity>
-                    <div class="select-reverse"><img class="select-reverse__img" src="../static/svg/arrow.svg"
-                                                     height="18"/></div>
+                <div class="select" v-b-modal.selectCityMobile>
+                    <div class="select-reverse"><img class="select-reverse__img" src="../static/svg/arrow.svg" height="18"/></div>
                     <v-select :options="['Canada', 'United States']"></v-select>
                 </div>
 
@@ -26,13 +24,13 @@
                     />
                 </div>
 
-                <div class="select time">
+                <div class="select">
                     <div></div>
                     <v-select :options="['10:00', '11:00']"></v-select>
                 </div>
 
                 <div class="select">
-                    <div></div>
+                    <div ></div>
                     <v-select :options="['1', '2']"></v-select>
                 </div>
 
@@ -40,25 +38,18 @@
                     <img src="../static/icon/search.png" height="20"/>
                 </b-link>
 
-                <ModalMap />
-
-
             </b-col>
-
         </div>
 
     </div>
 </template>
 
 <script>
-    import ModalMap from "../components/ModalMap";
-
 
     export default {
-        name: "FilterSeats",
+        name: "FilterSeatsMobile",
 
         components: {
-            ModalMap,
         },
 
         data() {
@@ -66,8 +57,9 @@
                 date: '',
             }
         },
-        methods: {},
-        computed: {}
+        methods: {
+
+        }
     }
 </script>
 
@@ -108,11 +100,9 @@
         &:nth-child(4) {
             width: 15%;
         }
-
         &:nth-child(5) {
             width: 7%;
         }
-
         &:nth-child(6) {
             width: 5%;
             background-color: var(--colorBg);
@@ -166,43 +156,34 @@
         border-radius: 2px;
         border-color: rgba(79, 171, 220, 0.25);
     }
-
     .select:nth-child(-n+2) .vs__dropdown-toggle {
         padding-left: 50px;
     }
-
     .select:nth-child(4) .vs__dropdown-toggle,
     .select:nth-child(5) .vs__dropdown-toggle {
         padding: 0 12px;
     }
-
     .select.calendar input {
         background: url("../static/icon/calendar.png") 93% 50% / 20px no-repeat;
         border-color: rgba(79, 171, 220, 0.25);
 
     }
-
     .select:nth-child(4) .vs__dropdown-toggle {
         background: url("../static/icon/clock.png") 90% 50% / 20px no-repeat;
     }
-
     .select:nth-child(5) .vs__dropdown-toggle {
         background: url("../static/icon/Pass.png") 75% 50% / 20px 18px no-repeat;
     }
-
     .vs__search {
         padding-left: 0 !important;
     }
-
     .select .vs__selected {
         height: 50px;
     }
-
     .select .vs__search::placeholder {
         display: flex;
         align-items: center;
     }
-
     .select .vs__actions {
         display: none;
     }
@@ -259,15 +240,12 @@
         transition: .3s;
         opacity: 0;
     }
-
-    .card__body:hover .bg-hover {
+    .card__body:hover .bg-hover{
         opacity: 1;
     }
-
     .card__body:hover {
         justify-content: center;
     }
-
     .card__body span:last-child {
         display: none;
         font-size: 14px;
@@ -276,7 +254,6 @@
         z-index: 0;
         opacity: .7;
     }
-
     .card__body:hover span:last-child {
         display: block;
     }
@@ -295,10 +272,13 @@
         }
     }
 
-    @media (min-width: 768px) and (max-width: 1023px) {
+    .filter-seats.mobile {
+        display: none;
+    }
 
-        .filter-seats {
-            display: none;
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .filter-seats.mobile {
+            display: flex;
         }
 
         .select__block {
@@ -318,11 +298,9 @@
             &:nth-child(4) {
                 width: 40%;
             }
-
             &:nth-child(5) {
                 width: 19%;
             }
-
             &:nth-child(6) {
                 width: 100%;
             }
@@ -334,8 +312,12 @@
 
     @media (max-width: 767px) {
 
-        .filter-seats {
-            display: none;
+        .filter-seats.mobile {
+            display: flex;
+        }
+
+        .cards-padding {
+            padding: 10px 0;
         }
 
         .cards {
@@ -360,15 +342,12 @@
             &:nth-child(3) {
                 width: 99%;
             }
-
             &:nth-child(4) {
                 width: 70%;
-            }
-
+        }
             &:nth-child(5) {
                 width: 28%
             }
-
             &:nth-child(6) {
                 width: 99%;
             }
@@ -376,7 +355,6 @@
         }
 
     }
-
 
 
 </style>

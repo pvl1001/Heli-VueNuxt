@@ -22,9 +22,12 @@ a:hover {
 }
 
 .wrapper {
-    max-width: 1440px;
+    max-width: 1180px;
     //padding: 0 130px;
     margin: 0 auto;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .heli-btn {
@@ -139,8 +142,16 @@ a:hover {
 
 }
 
+.modal-backdrop {
+    opacity: .8;
+}
+
 @media (max-width: 767px) {
     .wrapper {
-        padding: 0;
+        padding: 30px 0 0;
+    }
+
+    .mobile {
+        display: flex;
     }
 }

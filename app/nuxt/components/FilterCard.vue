@@ -1,73 +1,20 @@
 <template>
-    <div class="filter-seats">
+    <div class="d-md-flex d-block cards">
+        <b-col cols="12" md="" class="cards-padding" v-for="index in 4" :key="index">
+            <div class="card__body">
+                <b-link href="#" />
 
-        <div class="my-1">
-            <b-col cols="12" class="d-flex select__block" :class="{ 'pb-0': this.$route.path === '/' }">
-
-                <div class="select" v-b-modal.selectCity>
-                    <img class="select__logo" src="../static/icon/Union.png" height="24"/>
-                    <v-select :options="['Canada', 'United States']"></v-select>
-                </div>
-
-                <div class="select" v-b-modal.selectCity>
-                    <div class="select-reverse"><img class="select-reverse__img" src="../static/svg/arrow.svg"
-                                                     height="18"/></div>
-                    <v-select :options="['Canada', 'United States']"></v-select>
-                </div>
-
-                <div class="select calendar">
-                    <v-date-picker
-                        v-model="date"
-                        :popover="{ placement: 'bottom', visibility: 'click' }"
-                        :input-props='{
-                           placeholder: "MM/DD/YYYY",
-                           readonly: true,
-                           }'
-                    />
-                </div>
-
-                <div class="select time">
-                    <div></div>
-                    <v-select :options="['10:00', '11:00']"></v-select>
-                </div>
-
-                <div class="select">
-                    <div></div>
-                    <v-select :options="['1', '2']"></v-select>
-                </div>
-
-                <b-link href="#" class="select">
-                    <img src="../static/icon/search.png" height="20"/>
-                </b-link>
-
-                <ModalMap />
-
-
-            </b-col>
-
-        </div>
-
+                <div class="bg-hover"></div>
+                <span>Airport transfers</span>
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, voluptates..</span>
+            </div>
+        </b-col>
     </div>
 </template>
 
 <script>
-    import ModalMap from "../components/ModalMap";
-
-
     export default {
-        name: "FilterSeats",
-
-        components: {
-            ModalMap,
-        },
-
-        data() {
-            return {
-                date: '',
-            }
-        },
-        methods: {},
-        computed: {}
+        name: "FilterCard"
     }
 </script>
 
@@ -87,7 +34,7 @@
     }
 
     .select__block {
-        padding-bottom: 23px;
+        padding-bottom: 70px;
 
         .select__logo {
             position: absolute;
@@ -96,49 +43,6 @@
         }
     }
 
-    .select {
-        width: 30%;
-        display: inline-block;
-        position: relative;
-        margin-right: 2px;
-        height: 60px;
-        background-color: #fff;
-
-        &:nth-child(3),
-        &:nth-child(4) {
-            width: 15%;
-        }
-
-        &:nth-child(5) {
-            width: 7%;
-        }
-
-        &:nth-child(6) {
-            width: 5%;
-            background-color: var(--colorBg);
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            img {
-                transition: .3s;
-            }
-
-            &:hover img {
-                transform: scale(1.2);
-            }
-
-            img {
-                top: calc(50% - 10px);
-                left: calc(50% - 10px);
-            }
-        }
-
-        .vs__dropdown-menu {
-            min-width: fit-content;
-        }
-    }
 
     .select-reverse {
         position: absolute;
@@ -166,43 +70,34 @@
         border-radius: 2px;
         border-color: rgba(79, 171, 220, 0.25);
     }
-
     .select:nth-child(-n+2) .vs__dropdown-toggle {
         padding-left: 50px;
     }
-
     .select:nth-child(4) .vs__dropdown-toggle,
     .select:nth-child(5) .vs__dropdown-toggle {
         padding: 0 12px;
     }
-
     .select.calendar input {
         background: url("../static/icon/calendar.png") 93% 50% / 20px no-repeat;
         border-color: rgba(79, 171, 220, 0.25);
 
     }
-
     .select:nth-child(4) .vs__dropdown-toggle {
         background: url("../static/icon/clock.png") 90% 50% / 20px no-repeat;
     }
-
     .select:nth-child(5) .vs__dropdown-toggle {
         background: url("../static/icon/Pass.png") 75% 50% / 20px 18px no-repeat;
     }
-
     .vs__search {
         padding-left: 0 !important;
     }
-
     .select .vs__selected {
         height: 50px;
     }
-
     .select .vs__search::placeholder {
         display: flex;
         align-items: center;
     }
-
     .select .vs__actions {
         display: none;
     }
@@ -259,15 +154,12 @@
         transition: .3s;
         opacity: 0;
     }
-
-    .card__body:hover .bg-hover {
+    .card__body:hover .bg-hover{
         opacity: 1;
     }
-
     .card__body:hover {
         justify-content: center;
     }
-
     .card__body span:last-child {
         display: none;
         font-size: 14px;
@@ -276,7 +168,6 @@
         z-index: 0;
         opacity: .7;
     }
-
     .card__body:hover span:last-child {
         display: block;
     }
@@ -297,10 +188,6 @@
 
     @media (min-width: 768px) and (max-width: 1023px) {
 
-        .filter-seats {
-            display: none;
-        }
-
         .select__block {
             flex-wrap: wrap;
             justify-content: center;
@@ -318,11 +205,9 @@
             &:nth-child(4) {
                 width: 40%;
             }
-
             &:nth-child(5) {
                 width: 19%;
             }
-
             &:nth-child(6) {
                 width: 100%;
             }
@@ -334,8 +219,8 @@
 
     @media (max-width: 767px) {
 
-        .filter-seats {
-            display: none;
+        .cards-padding {
+            padding: 10px 0;
         }
 
         .cards {
@@ -360,15 +245,12 @@
             &:nth-child(3) {
                 width: 99%;
             }
-
             &:nth-child(4) {
                 width: 70%;
             }
-
             &:nth-child(5) {
                 width: 28%
             }
-
             &:nth-child(6) {
                 width: 99%;
             }
@@ -376,7 +258,6 @@
         }
 
     }
-
 
 
 </style>

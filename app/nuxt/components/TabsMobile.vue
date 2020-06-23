@@ -1,5 +1,5 @@
 <template>
-    <b-col class="tabs">
+    <b-col class="tabs mobile">
         <b-nav class="">
             <b-nav-item to="/" link-classes="title-link">Seats</b-nav-item>
             <b-nav-item to="/charter" link-classes="title-link">Charter</b-nav-item>
@@ -13,17 +13,15 @@
 
 <script>
     export default {
-        name: "Tabs",
-
-        computed: {
-            // filterSeatsMarginTop() {
-            //     return this.$route.path !== '/' ? '57px' : ''
-            // }
-        }
+        name: "TabsMobile",
     }
 </script>
 
 <style lang="scss">
+
+    .tabs.mobile {
+        display: none;
+    }
 
     .title-link {
         padding: 0;
@@ -50,9 +48,12 @@
 
     @media (max-width: 1023px) {
 
-        .tabs {
-            display: none;
+        .tabs.mobile {
+            display: flex;
+            margin-top: 0;
         }
+
+
 
     }
 </style>
