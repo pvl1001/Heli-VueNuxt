@@ -30,6 +30,7 @@ module.exports = {
       { src: '~/plugins/vue-select.js', ssr: false },
       { src: '~/plugins/vue-awesome-swiper.js', ssr: false },
       { src: '~/plugins/v-calendar.js', ssr: false },
+      { src: '~/plugins/VueGoogleMaps.js', ssr: false },
   ],
   build: {
     /*

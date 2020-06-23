@@ -1,14 +1,6 @@
 <template>
   <div>
       <div class="burger-menu" :class="{ 'show-burger': showBurger }">
-<!--          <div class="burger">-->
-<!--              <input type="checkbox" id="menu8" @click="showBurger = !showBurger" />-->
-<!--              <label for="menu8">-->
-<!--                  <div></div>-->
-<!--                  <div></div>-->
-<!--                  <div></div>-->
-<!--              </label>-->
-<!--          </div>-->
           <b-nav class="nav">
               <b-nav-item>FLIGHTS</b-nav-item>
               <b-nav-item>ABOUT</b-nav-item>
@@ -17,27 +9,29 @@
       </div>
       <b-container fluid>
           <b-row>
-              <b-col cols="12" class="header-image">
+              <b-col cols="12" class="header-image" :style="{ height: headerImageHeight, marginBottom: headerImageMarginBottom }">
+                  <div :class="{ 'bg-opacity': this.$route.path !== '/' }"></div>
                   <div class="wrapper">
-                      <div class="d-flex justify-content-between align-items-center">
-                          <img src="../static/icon/logo.png" width="177" height="51">
+                      <div class="logo d-flex justify-content-between align-items-center">
+                          <a href="/">
+                              <img src="../static/icon/logo.png" width="177" height="51"></a>
 
                           <div class="burger">
                               <input type="checkbox" id="menu" @click="showBurger = !showBurger" />
-                              <label for="menu">
-                                  <div></div>
-                                  <div></div>
-                                  <div></div>
-                              </label>
+                              <label for="menu"><div/><div/><div/></label>
                           </div>
 
-                          <b-nav class="nav">
+                          <b-nav class="header-image__nav" :class="{ 'd-flex': this.$route.path === '/' }">
                               <b-nav-item>FLIGHTS</b-nav-item>
                               <b-nav-item>ABOUT</b-nav-item>
                               <b-nav-item>LOGIN</b-nav-item>
                           </b-nav>
                       </div>
-                      <div class="choose">Choose your way.</div>
+
+<!--                      <Tabs :class="{ 'd-none': this.$route.path === '/' }" />-->
+<!--                      <FilterSeats :class="{ 'd-none': this.$route.path === '/' }" />-->
+
+                      <div class="choose" :class="{ 'd-none': this.$route.path !== '/' }">Choose your way.</div>
                   </div>
               </b-col>
           </b-row>
@@ -50,24 +44,50 @@
  <script>
      import Vue from 'vue';
      import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+     import Tabs from "../components/Tabs";
+     import FilterSeats from "../components/filter-seats";
 
-     Vue.use(BootstrapVue)
-     Vue.use(IconsPlugin)
+     Vue.use(BootstrapVue);
+     Vue.use(IconsPlugin);
 
      export default {
          components: {
-
+             Tabs,
+             FilterSeats,
          },
 
          data() {
              return {
                  showBurger: false,
              }
+         },
+
+         computed: {
+             headerImageHeight() {
+                 return this.$route.path === '/charter' ? '294px' : ''
+             },
+             headerImageMarginBottom () {
+                 return this.$route.path !== '/' ? '-194px' : ''
+                     // screen.width <= 767 ? 'auto' : ''
+             }
          }
      }
  </script>
 
 <style lang="scss">
+
+    .logo {
+        position: relative;
+    }
+
+    .bg-opacity {
+        background: rgba(255,255,255,0.5);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
 
     .burger-menu {
         display: none;
@@ -77,10 +97,7 @@
         display: none;
         width: 20px;
         height: 22px;
-        position: absolute;
-        top: 44px;
-        right: 20px;
-        z-index: 9999;
+        z-index: 10;
 
         input {
             display: none;
@@ -146,22 +163,25 @@
     .header-image {
         min-width: 100%;
         height: 410px;
-        background: url('../static/img/Rectangle 1.jpg') center no-repeat;
+        background: url('../static/img/Rectangle 1.jpg') 50% 65% no-repeat;
         background-size: cover;
-        padding-top: 31px;
 
-        ul > li > a {
-            text-transform: uppercase;
-            font-weight: 300;
-            font-size: 14px;
-            letter-spacing: 0.5em;
-            padding-right: 76px;
-            transition: .2s;
-            color: var(--colorText);
+        .header-image__nav {
+            > li > a {
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 14px;
+                letter-spacing: 0.5em;
+                padding-right: 76px;
+                transition: .2s;
+                color: var(--colorText);
+            }
+            li:last-child a {
+                padding-right: 0;
+            }
+
         }
-        ul li:last-child a {
-            padding-right: 0;
-        }
+
         .choose {
             color: #fff;
             font-size: 36px;
@@ -180,7 +200,14 @@
 
     @media (max-width: 767px) {
 
+        .header-image__nav {
+            display: none;
+        }
+
         .header-image {
+
+            margin-bottom: auto !important;
+
             .nav {
                 position: absolute;
                 flex-direction: column;
