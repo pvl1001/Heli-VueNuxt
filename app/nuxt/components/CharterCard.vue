@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="m-15">
         <div v-for="item in 3" :key="item" class="charter-card">
 
             <div class="charter-card__content">
@@ -320,6 +320,10 @@
     }
 
     @media (max-width: 767px) {
+
+        .m-15 {
+            margin: 0 -15px;
+        }
 
         .charter-card .charter-card__content {
             flex-wrap: wrap;

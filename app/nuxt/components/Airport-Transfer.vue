@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="airport-transfer">
+        <b-row class="airport-transfer">
             <b-col cols="12">
                 <h1>Airport transfers</h1>
 
@@ -42,7 +42,7 @@
                 </b-row>
 
             </b-col>
-        </div>
+        </b-row>
     </div>
 </template>
 

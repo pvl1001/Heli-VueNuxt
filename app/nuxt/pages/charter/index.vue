@@ -1,18 +1,19 @@
 <template>
-    <div class="charter">
+    <b-container fluid>
+        <div class="charter">
 
-        <div class="wrapper">
-            <Tabs />
-            <TabsMobile />
-            <FilterSeats />
-            <FilterSeatsMobile />
-            <div class="charter__title">Tomorrow, at your time</div>
+            <div class="wrapper">
+                <Tabs/>
+                <FilterSeats/>
+                <FilterSeatsMobile/>
+                <div class="charter__title">Tomorrow, at your time</div>
 
-            <CharterCard/>
+                <CharterCard/>
+            </div>
+
+            <Footer/>
         </div>
-
-        <Footer/>
-    </div>
+    </b-container>
 </template>
 
 <script>
@@ -20,7 +21,6 @@
     import Footer from "../../components/Footer"
     import FilterSeatsMobile from "../../components/FilterSeatsMobile"
     import FilterSeats from "../../components/filter-seats"
-    import TabsMobile from "../../components/TabsMobile"
     import Tabs from "../../components/Tabs"
 
 
@@ -32,7 +32,6 @@
             Footer,
             FilterSeatsMobile,
             FilterSeats,
-            TabsMobile,
             Tabs,
         }
     }
@@ -41,6 +40,7 @@
 <style lang="scss" scoped>
 
     .charter {
+        margin-top: -194px;
 
         .charter__title {
             font-size: 24px;
@@ -48,6 +48,12 @@
         }
     }
 
+
+    @media (max-width: 1023px) {
+        .charter {
+            margin-top: 0;
+        }
+    }
 
     @media (max-width: 767px) {
 

@@ -73,6 +73,7 @@
         data() {
             return {
                 position: {lat: 59.9315223, lng: 30.0285828},
+                index: '',
             }
         },
         methods: {}
@@ -90,10 +91,12 @@
 
         .select__block {
             padding-bottom: 13px;
+            justify-content: space-between;
         }
 
         .select {
-            width: 50%;
+            width: calc(50% - 1px);
+            margin: 0;
         }
 
         .modal-content {
@@ -105,10 +108,6 @@
     @media (max-width: 1023px) {
 
         #selectCityMobile {
-
-            .select {
-                width: 49%;
-            }
 
             .modal-body,
             .modal-open .modal {

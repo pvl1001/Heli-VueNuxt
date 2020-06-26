@@ -1,5 +1,5 @@
 <template>
-    <div class="helicopters">
+    <b-row class="helicopters">
         <b-col class="wrapper">
             <h1>Helicopters</h1>
             <span>We have access to a huge fleet of helicopters for any purpose.</span>
@@ -36,7 +36,7 @@
                 </div>
 
         </b-col>
-    </div>
+    </b-row>
 </template>
 
 <script>
