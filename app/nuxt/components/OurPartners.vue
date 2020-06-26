@@ -2,7 +2,7 @@
     <div class="our-partners">
         <h1>Our partners</h1>
         <span>This could be your advertising.</span>
-        <b-link href="#" class="heli-btn">JOIN US</b-link>
+        <b-link href="#" class="btn">JOIN US</b-link>
     </div>
 </template>
 
@@ -26,7 +26,7 @@
             display: block;
         }
 
-        .heli-btn {
+        .btn {
             margin: 0 auto;
         }
 

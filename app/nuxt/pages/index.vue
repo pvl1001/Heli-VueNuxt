@@ -1,8 +1,7 @@
 <template>
-    <div>
+    <b-container fluid>
         <div class="wrapper">
             <Tabs/>
-            <TabsMobile />
             <FilterSeats/>
             <FilterSeatsMobile/>
             <FilterCard />
@@ -15,13 +14,12 @@
         <Helicopters/>
         <OurPartners/>
         <Footer/>
-    </div>
+    </b-container>
 </template>
 
 <script>
 import vSelect from 'vue-select'
 import Tabs from "../components/Tabs"
-import TabsMobile from "../components/TabsMobile"
 import FilterSeats from "../components/filter-seats"
 import FilterSeatsMobile from "../components/FilterSeatsMobile"
 import AirportTransfer from "../components/Airport-Transfer"
@@ -41,7 +39,6 @@ export default {
     components: {
         FilterCard,
         Tabs,
-        TabsMobile,
         vSelect,
         FilterSeats,
         FilterSeatsMobile,

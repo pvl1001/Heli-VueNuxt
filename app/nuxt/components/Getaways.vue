@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="business-trips">
+        <b-row class="business-trips">
             <b-col cols="12">
                 <h1>Getaways</h1>
 
@@ -42,7 +42,7 @@
                 </b-row>
 
             </b-col>
-        </div>
+        </b-row>
     </div>
 
 

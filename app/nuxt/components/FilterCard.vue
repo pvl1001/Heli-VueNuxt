@@ -1,5 +1,5 @@
 <template>
-    <div class="d-md-flex d-block cards">
+    <b-row class="d-md-flex d-block cards">
         <b-col cols="12" md="" class="cards-padding" v-for="index in 4" :key="index">
             <div class="card__body">
                 <b-link href="#" />
@@ -9,7 +9,7 @@
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, voluptates..</span>
             </div>
         </b-col>
-    </div>
+    </b-row>
 </template>
 
 <script>
@@ -76,11 +76,6 @@
     .select:nth-child(4) .vs__dropdown-toggle,
     .select:nth-child(5) .vs__dropdown-toggle {
         padding: 0 12px;
-    }
-    .select.calendar input {
-        background: url("../static/icon/calendar.png") 93% 50% / 20px no-repeat;
-        border-color: rgba(79, 171, 220, 0.25);
-
     }
     .select:nth-child(4) .vs__dropdown-toggle {
         background: url("../static/icon/clock.png") 90% 50% / 20px no-repeat;
@@ -191,6 +186,7 @@
         .select__block {
             flex-wrap: wrap;
             justify-content: center;
+            padding-bottom: 0;
         }
 
         .select.calendar input {
@@ -214,7 +210,6 @@
 
         }
 
-
     }
 
     @media (max-width: 767px) {
@@ -230,6 +225,7 @@
         .select__block {
             flex-wrap: wrap;
             justify-content: center;
+            padding-bottom: 0;
         }
 
         .card__body:before {

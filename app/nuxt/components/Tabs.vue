@@ -1,13 +1,12 @@
 <template>
     <b-col class="tabs">
-        <b-nav class="">
-            <b-nav-item to="/" link-classes="title-link">Seats</b-nav-item>
-            <b-nav-item to="/charter" link-classes="title-link">Charter</b-nav-item>
-            <b-nav-item to="/excursions" link-classes="title-link">Excursions</b-nav-item>
-
-<!--            <b-nav-item to="/cruises" link-classes="btn btn-light">{{$ml.get('cruises')}}</b-nav-item>-->
-
-        </b-nav>
+        <b-row>
+            <b-nav class="">
+                <b-nav-item to="/" link-classes="title-link">Seats</b-nav-item>
+                <b-nav-item to="/charter" link-classes="title-link">Charter</b-nav-item>
+                <b-nav-item to="/excursions" link-classes="title-link">Excursions</b-nav-item>
+            </b-nav>
+        </b-row>
     </b-col>
 </template>
 
@@ -15,11 +14,7 @@
     export default {
         name: "Tabs",
 
-        computed: {
-            // filterSeatsMarginTop() {
-            //     return this.$route.path !== '/' ? '57px' : ''
-            // }
-        }
+        computed: {}
     }
 </script>
 
@@ -50,9 +45,9 @@
 
     @media (max-width: 1023px) {
 
-        .tabs {
-            display: none;
-        }
+        /*.tabs {*/
+        /*    display: none;*/
+        /*}*/
 
     }
 </style>

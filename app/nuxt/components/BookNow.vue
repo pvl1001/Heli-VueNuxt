@@ -3,7 +3,7 @@
         <b-row>
             <b-col class="book-now d-flex align-items-center justify-content-center">
                 <div class="book-now__text">Don't stand in traffic, join us and use helicopter.</div>
-                <b-link href="#" class="heli-btn">Book Now</b-link>
+                <b-link href="#" class="btn">Book Now</b-link>
             </b-col>
         </b-row>
     </div>

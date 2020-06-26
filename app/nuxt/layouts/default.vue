@@ -2,7 +2,7 @@
   <div>
       <div class="burger-menu"
            :class="{ 'show-burger': showBurger }"
-           @click="showBurger = !showBurger">
+           @click="isShowBurger">
           <b-nav class="nav">
               <b-nav-item>FLIGHTS</b-nav-item>
               <b-nav-item>ABOUT</b-nav-item>
@@ -11,19 +11,19 @@
       </div>
       <b-container fluid>
           <b-row>
-              <b-col cols="12" class="header-image" :style="{ height: headerImageHeight, marginBottom: headerImageMarginBottom }">
+              <b-col cols="12" class="header-image" :style="{ height: headerImageHeight }">
                   <div :class="{ 'bg-opacity': this.$route.path !== '/' }"></div>
                   <div class="wrapper">
                       <div class="logo d-flex justify-content-between align-items-center">
                           <a href="/">
                               <img src="../static/icon/logo.png" width="177" height="51"></a>
 
-                          <div class="burger">{{ menu }}
-                              <input type="checkbox" id="menu" @click="showBurger = !showBurger" />
+                          <div class="burger">
+                              <input type="checkbox" id="menu" @click="isShowBurger" />
                               <label for="menu"><div/><div/><div/></label>
                           </div>
 
-                          <b-nav class="header-image__nav" :class="{ 'd-flex': this.$route.path === '/' }">
+                          <b-nav class="header-image__nav nav-top" :class="{ 'd-flex': this.$route.path === '/' }">
                               <b-nav-item>FLIGHTS</b-nav-item>
                               <b-nav-item>ABOUT</b-nav-item>
                               <b-nav-item to="/login">LOGIN</b-nav-item>
@@ -60,26 +60,31 @@
          data() {
              return {
                  showBurger: false,
-                 menu: '',
              }
          },
 
-         methods: {},
+         methods: {
+             isShowBurger() {
+                 this.showBurger = !this.showBurger;
+                 let menu = document.getElementById('menu');
+                 this.showBurger ? menu.checked = true : menu.checked = false
+             }
+         },
 
          computed: {
              headerImageHeight() {
                  return this.$route.path !== '/' ? '294px' : ''
              },
-             headerImageMarginBottom () {
-                 return this.$route.path !== '/' ? '-194px' : ''
-                     // screen.width <= 767 ? 'auto' : ''
-             }
          },
 
      }
  </script>
 
 <style lang="scss">
+
+    .nav-top .nuxt-link-exact-active {
+        border: transparent;
+    }
 
     .logo {
         position: relative;

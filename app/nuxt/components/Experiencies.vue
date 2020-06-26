@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="experiencies">
+        <b-row class="experiencies">
             <b-col cols="12">
                 <h1>Experiencies</h1>
 
@@ -42,7 +42,7 @@
                 </b-row>
 
             </b-col>
-        </div>
+        </b-row>
     </div>
 
 </template>

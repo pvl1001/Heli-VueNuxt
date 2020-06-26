@@ -2,48 +2,50 @@
     <div class="filter-seats">
 
         <div class="my-1">
-            <b-col cols="12" class="d-flex select__block" :class="{ 'pb-0': this.$route.path === '/' }">
+            <b-row>
+                <b-col cols="12" class="d-flex select__block" :class="{ 'pb-0': this.$route.path === '/' }">
 
-                <div class="select" v-b-modal.selectCity>
-                    <img class="select__logo" src="../static/icon/Union.png" height="24"/>
-                    <v-select :options="['Canada', 'United States']"></v-select>
-                </div>
+                    <div class="select" v-b-modal.selectCity>
+                        <img class="select__logo" src="../static/icon/Union.png" height="24"/>
+                        <v-select :options="['Canada', 'United States']"></v-select>
+                    </div>
 
-                <div class="select" v-b-modal.selectCity>
-                    <div class="select-reverse"><img class="select-reverse__img" src="../static/svg/arrow.svg"
-                                                     height="18"/></div>
-                    <v-select :options="['Canada', 'United States']"></v-select>
-                </div>
+                    <div class="select" v-b-modal.selectCity>
+                        <div class="select-reverse"><img class="select-reverse__img" src="../static/svg/arrow.svg"
+                                                         height="18"/></div>
+                        <v-select :options="['Canada', 'United States']"></v-select>
+                    </div>
 
-                <div class="select calendar">
-                    <v-date-picker
-                        v-model="date"
-                        :popover="{ placement: 'bottom', visibility: 'click' }"
-                        :input-props='{
+                    <div class="select calendar">
+                        <v-date-picker
+                            v-model="date"
+                            :popover="{ placement: 'bottom', visibility: 'click' }"
+                            :input-props='{
                            placeholder: "MM/DD/YYYY",
                            readonly: true,
                            }'
-                    />
-                </div>
+                        />
+                    </div>
 
-                <div class="select time">
-                    <div></div>
-                    <v-select :options="['10:00', '11:00']"></v-select>
-                </div>
+                    <div class="select time">
+                        <div></div>
+                        <v-select :options="['10:00', '11:00']"></v-select>
+                    </div>
 
-                <div class="select">
-                    <div></div>
-                    <v-select :options="['1', '2']"></v-select>
-                </div>
+                    <div class="select">
+                        <div></div>
+                        <v-select :options="['1', '2']"></v-select>
+                    </div>
 
-                <b-link href="#" class="select">
-                    <img src="../static/icon/search.png" height="20"/>
-                </b-link>
+                    <b-link href="#" class="select">
+                        <img src="../static/icon/search.png" height="20"/>
+                    </b-link>
 
-                <ModalMap />
+                    <ModalMap/>
 
 
-            </b-col>
+                </b-col>
+            </b-row>
 
         </div>
 
@@ -174,12 +176,6 @@
     .select:nth-child(4) .vs__dropdown-toggle,
     .select:nth-child(5) .vs__dropdown-toggle {
         padding: 0 12px;
-    }
-
-    .select.calendar input {
-        background: url("../static/icon/calendar.png") 93% 50% / 20px no-repeat;
-        border-color: rgba(79, 171, 220, 0.25);
-
     }
 
     .select:nth-child(4) .vs__dropdown-toggle {
@@ -376,7 +372,6 @@
         }
 
     }
-
 
 
 </style>

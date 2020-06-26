@@ -1,52 +1,55 @@
 <template>
-    <b-col class="footer">
-        <b-row class="wrapper">
+    <b-row class="footer">
+        <b-col class="wrapper">
+            <b-container fluid>
+                <b-row>
+                    <b-col cols="12" md="3" class="contacts">
+                        <img src="../static/icon/LogoFFF.png" height="51"/>
+                        <div class="contacts__contacts">CONTACTS</div>
+                        <div class="contacts__phone">+7 999 XXX XX XX</div>
+                        <div class="contacts__email">EXAMPLE@HELIHOP.COM</div>
+                        <div class="contacts__address">Address</div>
+                    </b-col>
 
-            <b-col cols="12" md="3" class="contacts">
-                <img src="../static/icon/LogoFFF.png" height="51"/>
-                <div class="contacts__contacts">CONTACTS</div>
-                <div class="contacts__phone">+7 999 XXX XX XX</div>
-                <div class="contacts__email">EXAMPLE@HELIHOP.COM</div>
-                <div class="contacts__address">Address</div>
-            </b-col>
-
-            <b-col cols="12" md="" class="d-flex info">
-                <div class="info__about">
-                    <b-link href="#">about</b-link>
-                    <b-link href="#">Safety & Security</b-link>
-                    <b-link href="#">Who's Flying Ascent</b-link>
-                    <b-link href="#">Partner with Ascent</b-link>
-                    <b-link href="#">Sustainability</b-link>
-                    <b-link href="#">Privacy Policy</b-link>
-                    <b-link href="#">Blog</b-link>
-                </div>
-                <div class="info__services">
-                    <b-link>services</b-link>
-                    <b-link>Search for Flights</b-link>
-                    <b-link>Airport Transfer</b-link>
-                    <b-link>Locations</b-link>
-                    <b-link>Lounges</b-link>
-                    <b-link>For Business</b-link>
-                </div>
-                <div class="info__support">
-                    <b-link>support</b-link>
-                    <b-link>How Ascent Works</b-link>
-                    <b-link>Useful Travel Info</b-link>
-                    <b-link>Luggage Guide</b-link>
-                    <b-link>Weather Guide</b-link>
-                    <b-link>Cancellation Guide</b-link>
-                    <b-link>Terms of Service</b-link>
-                    <b-link>FAQs</b-link>
-                </div>
-                <div class="info__account">
-                    <b-link>account</b-link>
-                    <b-link>My Account</b-link>
-                    <b-link>Create Account</b-link>
-                    <b-link>Login</b-link>
-                </div>
-            </b-col>
-        </b-row>
-    </b-col>
+                    <b-col cols="12" md="" class="d-flex info">
+                        <div class="info__about">
+                            <b-link href="#">about</b-link>
+                            <b-link href="#">Safety & Security</b-link>
+                            <b-link href="#">Who's Flying Ascent</b-link>
+                            <b-link href="#">Partner with Ascent</b-link>
+                            <b-link href="#">Sustainability</b-link>
+                            <b-link href="#">Privacy Policy</b-link>
+                            <b-link href="#">Blog</b-link>
+                        </div>
+                        <div class="info__services">
+                            <b-link>services</b-link>
+                            <b-link>Search for Flights</b-link>
+                            <b-link>Airport Transfer</b-link>
+                            <b-link>Locations</b-link>
+                            <b-link>Lounges</b-link>
+                            <b-link>For Business</b-link>
+                        </div>
+                        <div class="info__support">
+                            <b-link>support</b-link>
+                            <b-link>How Ascent Works</b-link>
+                            <b-link>Useful Travel Info</b-link>
+                            <b-link>Luggage Guide</b-link>
+                            <b-link>Weather Guide</b-link>
+                            <b-link>Cancellation Guide</b-link>
+                            <b-link>Terms of Service</b-link>
+                            <b-link>FAQs</b-link>
+                        </div>
+                        <div class="info__account">
+                            <b-link>account</b-link>
+                            <b-link>My Account</b-link>
+                            <b-link>Create Account</b-link>
+                            <b-link>Login</b-link>
+                        </div>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-col>
+    </b-row>
 </template>
 
 <script>
@@ -77,14 +80,17 @@
             img {
                 margin-bottom: 94px;
             }
+
             .contacts__contacts {
                 font-size: 18px;
             }
+
             .contacts__contacts,
             .contacts__phone,
             .contacts__email {
                 padding-bottom: 15px;
             }
+
             .contacts__address {
                 text-transform: none;;
             }
@@ -144,6 +150,7 @@
                 padding-bottom: 50px;
                 min-width: 100%;
             }
+
             .info {
                 flex-direction: column;
                 align-items: center;
