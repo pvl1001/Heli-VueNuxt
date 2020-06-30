@@ -1,0 +1,49 @@
+version: '3.3'
+services:
+  helihop_local_nginx:
+    build:
+      context: ./
+      dockerfile: ./docker/nginx/Dockerfile
+    volumes:
+      - ./../app:/app:cached
+      - ./../gulp:/gulp:cached
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./docker/logs/nginx:/var/log/nginx
+    expose:
+      - 80
+    ports:
+      - 80:80
+      - 81:81
+    env_file:
+      - ./docker/env/dev/VIRTUAL_HOST.env
+      - ./docker/env/dev/APP_ENV.env
+    restart: always
+  helihop_local_php:
+      build:
+        context: ./
+        dockerfile: ./docker/php/Dockerfile
+      volumes:
+        - ./../app:/app:cached
+      env_file:
+        - ./docker/env/dev/PHP_IDE_CONFIG.env
+        - ./docker/env/dev/APP_ENV.env
+        - ./docker/env/dev/NODE_PATH.env
+        - ./docker/env/dev/XDEBUG_CONFIG.env
+      restart: always
+  helihop_local_db:
+    build:
+      context: ./
+      dockerfile: ./docker/mysql/Dockerfile
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: igovet
+      MYSQL_USER: igovet
+      MYSQL_PASSWORD: igovet
+      MYSQL_DATABASE: helihop_local
+    volumes:
+      - ./../:/app:cached
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
